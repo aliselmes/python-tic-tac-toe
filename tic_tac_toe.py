@@ -27,3 +27,57 @@ def game():
         else: 
             print('That space is already taken, choose another space!')
             continue
+        
+        #check the winning conditions if more than 5 moves
+        if count >= 5:
+            if theBoard['7'] == theBoard['8'] == theBoard['9'] != ' ':
+                printBoard(theBoard)
+                print("\nGAME OVER\n")
+                print(" *** " + turn + " won! " + "*** ")
+                break
+            elif theBoard['4'] == theBoard['5'] == theBoard['6'] != ' ':
+                printBoard(theBoard)
+                print("\nGAME OVER\n")
+                print(" *** " + turn + " won! " + "*** ")
+                break
+            elif theBoard['1'] == theBoard['2'] == theBoard['3'] != ' ':
+                printBoard(theBoard)
+                print("\nGAME OVER\n")
+                print(" *** " + turn + " won! " + "*** ")
+                break
+            elif theBoard['1'] == theBoard['4'] == theBoard['7'] != ' ':
+                printBoard(theBoard)
+                print("\nGAME OVER\n")
+                print(" *** " + turn + " won! " + "*** ")
+                break
+            elif theBoard['2'] == theBoard['5'] == theBoard['8'] != ' ':
+                printBoard(theBoard)
+                print("\nGAME OVER\n")
+                print(" *** " + turn + " won! " + "*** ")
+                break
+            elif theBoard['3'] == theBoard['6'] == theBoard['9'] != ' ':
+                printBoard(theBoard)
+                print("\nGAME OVER\n")
+                print(" *** " + turn + " won! " + "*** ")
+                break
+            elif theBoard['7'] == theBoard['5'] == theBoard['3'] != ' ':
+                printBoard(theBoard)
+                print("\nGAME OVER\n")
+                print(" *** " + turn + " won! " + "*** ")
+                break
+            elif theBoard['1'] == theBoard['5'] == theBoard['9'] != ' ':
+                printBoard(theBoard)
+                print("\nGAME OVER\n")
+                print(" *** " + turn + " won! " + "*** ")
+                break
+        
+        #Tie
+        if count == 9:
+            print("\nGAME OVER\n")
+            print("It's a tie!")
+        
+        #Change player after every move:
+        if turn == 'X':
+            turn == 'O'
+        else:
+            turn == 'X'
