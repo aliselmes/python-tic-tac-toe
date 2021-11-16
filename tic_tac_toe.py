@@ -22,7 +22,7 @@ def game():
         move = input()
 
         if theBoard[move] == ' ':
-            theBoard[move] == turn
+            theBoard[move] = turn
             count += 1
         else: 
             print('That space is already taken, choose another space!')
@@ -75,9 +75,29 @@ def game():
         if count == 9:
             print("\nGAME OVER\n")
             print("It's a tie!")
-        
+
         #Change player after every move:
         if turn == 'X':
-            turn == 'O'
+            turn = 'O'
         else:
-            turn == 'X'
+            turn = 'X'
+
+    #restart the game
+    board_keys = []
+
+    for key in theBoard:
+        board_keys.append(key)
+
+    restart = input('Do you want to play again? (y/n)')
+
+    if restart == 'y' or restart == 'Y':
+        for key in board_keys:
+            theBoard[key] = ' '
+    
+        game()
+    else:
+        print("Goodbye!")
+        exit()
+
+if __name__ == "__main__":
+    game()
